@@ -5,19 +5,19 @@ const HomeService = () => {
   // Sample services data (you can customize this)
   const services = [
     {
-      title: 'Web Development',
+      title: 'IT Services',
       description:
-        'We craft responsive, high-performance websites tailored to your needs using the latest technologies.',
+        "IT services can often include software development processes to create custom applications that fulfill specific business needs. For example, a startup business may rely on its IT service team to create a software application for organizing and maintaining venture capitalist records. In these cases, IT can provide the services you need to develop personalized software and ensure the program's viability through continuous testing, development and maintenance",
     },
     {
-      title: 'UI/UX Design',
+      title: 'Electrical Services',
       description:
-        'Our team designs intuitive and visually stunning interfaces to enhance user satisfaction.',
+        "Electrical services are crucial for ensuring that buildings are safe and energy-efficient. They include regular maintenance to identify and address potential issues before they become significant problems, and safety inspections to ensure compliance with electrical codes and safety standards.",
     },
     {
-      title: 'Consulting',
+      title: 'Technical Support',
       description:
-        'Get expert advice to streamline your projects and achieve your business goals efficiently.',
+        "Our Technical Support Engineer provides customer service for computer hardware and software. They troubleshoot issues related to their company's accounts or any other miscellaneous tasks in the field as determined by their manager.",
     },
   ];
 

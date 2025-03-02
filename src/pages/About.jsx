@@ -1,15 +1,47 @@
 import React from "react";
+import DevRahul from "../assets/team/rahul.jpg"
 
-const AboutUs = () => {
+const About = () => {
+  // Sample team data
+  const teamMembers = [
+    {
+      name: "Lokesh More",
+      role: "Founder & CEO",
+      image: `${DevRahul}`,
+    },
+    {
+      name: "Rahul Misal",
+      role: "Lead Developer",
+      image: `${DevRahul}`,
+    },
+    {
+      name: "Pranit Ingulkar",
+      role: "Cunsultant & Manager",
+      image: `${DevRahul}`,
+    },
+    {
+      name: "Prafull Gawali",
+      role: "Marketing Lead",
+      image: `${DevRahul}`,
+    },
+  ];
+
   return (
     <div className="bg-[#252525] text-white min-h-screen flex flex-col">
-      {/* Hero Section with Gradient */}
-      <section className="flex flex-col items-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+      {/* Hero Section with Background Image */}
+      <section className="relative flex items-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-50"
+          style={{
+            backgroundImage: `url('https://via.placeholder.com/1920x600?text=Team+Image')`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <h1 className="text-5xl md:text-6xl font-bold text-yellow-400 drop-shadow-lg">
             About Us
           </h1>
-          <p className="text-xl max-w-2xl mx-auto leading-relaxed text-white drop-shadow-md">
+          <p className="mt-4 text-xl max-w-2xl leading-relaxed">
             Discover who we are, what drives us, and how we’re making an impact.
           </p>
         </div>
@@ -35,7 +67,7 @@ const AboutUs = () => {
                 collaboration and excellence every step of the way.
               </p>
             </div>
-            <div className="flex-1 flex justify-center w-full">
+            <div className="flex-1 flex justify-center">
               <div className="bg-yellow-400 h-64 w-full max-w-md rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold">
                   Mission Image
@@ -50,49 +82,26 @@ const AboutUs = () => {
       <section className="flex flex-col py-16 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h2 className="text-3xl font-semibold text-yellow-400 mb-12">
-            Meet Our Team
+            Our Team
           </h2>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-8 w-full">
-            {/* Team Member 1 */}
-            <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-1/4">
-              <div className="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                <span className="text-white text-xl">Photo</span>
+          <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 w-full lg:flex-row lg:flex-nowrap">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center w-full md:w-1/2 lg:w-auto min-w-[200px] bg-[#252525] p-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-700"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-32 h-32 rounded-full mb-4 object-cover border-2 border-yellow-400 transition-transform duration-300 hover:scale-110"
+                  loading="lazy"
+                />
+                <h3 className="text-xl font-semibold text-yellow-400">
+                  {member.name}
+                </h3>
+                <p className="text-lg text-gray-300">{member.role}</p>
               </div>
-              <h3 className="text-xl font-semibold text-yellow-400">
-                Lokesh More
-              </h3>
-              <p className="text-lg">Founder & CEO</p>
-            </div>
-            {/* Team Member 2 */}
-            <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-1/4">
-              <div className="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                <span className="text-white text-xl">Photo</span>
-              </div>
-              <h3 className="text-xl font-semibold text-yellow-400">
-                Rahul Misal
-              </h3>
-              <p className="text-lg">Lead Developer</p>
-            </div>
-            {/* Team Member 3 */}
-            <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-1/4">
-              <div className="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                <span className="text-white text-xl">Photo</span>
-              </div>
-              <h3 className="text-xl font-semibold text-yellow-400">
-                Pranit Ingulkar
-              </h3>
-              <p className="text-lg">UX Designer</p>
-            </div>
-            {/* Team Member 4 */}
-            <div className="flex flex-col items-center w-full sm:w-1/2 lg:w-1/4">
-              <div className="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center mb-4">
-                <span className="text-white text-xl">Photo</span>
-              </div>
-              <h3 className="text-xl font-semibold text-yellow-400">
-                Prafull Gawali
-              </h3>
-              <p className="text-lg">Marketing Lead</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -135,4 +144,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default About;
