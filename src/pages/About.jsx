@@ -1,6 +1,6 @@
 import React from "react";
-import Mission from "../assets/backgrounds/mission.jpg"
-import Aboutusbg from "../assets/backgrounds/aboutusbg.jpg"
+import Mission from "../assets/backgrounds/mission.jpg";
+import Aboutusbg from "../assets/backgrounds/aboutusbg.jpg";
 import { motion } from "framer-motion";
 import CeoLokesh from "../assets/team/lokesh.png";
 import DevRahul from "../assets/team/rahul.jpg";
@@ -71,8 +71,7 @@ const About = () => {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{
-            backgroundImage:
-              `url(${Aboutusbg})`,
+            backgroundImage: `url(${Aboutusbg})`,
           }}
         ></div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -127,7 +126,11 @@ const About = () => {
             >
               <div className="h-64 w-full max-w-md rounded-lg flex items-center justify-center">
                 <span className="text-white text-2xl font-bold rounded-lg">
-                  <img src={`${Mission}`} alt="Mission" className="rounded-lg" />
+                  <img
+                    src={`${Mission}`}
+                    alt="Mission"
+                    className="rounded-lg"
+                  />
                 </span>
               </div>
             </motion.div>

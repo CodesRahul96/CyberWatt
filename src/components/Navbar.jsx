@@ -44,7 +44,7 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="Logo"
-              className="h-12 md:h-14 cursor-pointer"
+              className="h-20 md:h-14 cursor-pointer"
             />
           </Link>
         </motion.div>
