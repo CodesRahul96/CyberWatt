@@ -1,14 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { MdElectricBolt, MdOutlineDesignServices } from "react-icons/md";
 import { GrEmergency } from "react-icons/gr";
 import { SiSpringsecurity } from "react-icons/si";
-
 import {
   FaArrowsAlt,
   FaLaptopCode,
   FaHeadset,
   FaPhoneAlt,
 } from "react-icons/fa";
+import Ourservicebg from "../assets/backgrounds/ourservicebg.jpg";
 
 const Services = () => {
   const servicesData = [
@@ -111,57 +112,181 @@ const Services = () => {
     },
   ];
 
+  // Animation variants
+  const heroVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+    hover: {
+      scale: 1.03,
+      shadow: "xl",
+      transition: { duration: 0.3 },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const buttonVariants = {
+    hover: { scale: 1.05 },
+    tap: { scale: 0.95 },
+  };
+
   return (
     <div className="bg-[#252525] text-white min-h-screen flex flex-col">
-      {/* Hero Section with Gradient */}
-      <section className="flex flex-col items-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]">
+      {/* Hero Section with Gradient and Animation */}
+      {/* <motion.section
+        className="flex flex-col items-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={heroVariants}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          <motion.h1
+            className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+            variants={childVariants}
+          >
             Our Services
-          </h1>
-          <p className="text-xl max-w-2xl mx-auto leading-relaxed text-white drop-shadow-md">
+          </motion.h1>
+          <motion.p
+            className="text-xl max-w-2xl mx-auto leading-relaxed text-white drop-shadow-md"
+            variants={childVariants}
+          >
             Discover our comprehensive range of professional services tailored
             to meet your needs.
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section> */}
 
-      {/* Services Section */}
-      <section className="flex flex-col py-16">
+      <motion.section
+        className="relative flex items-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={heroVariants}
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-50"
+          style={{
+            backgroundImage: `url(${Ourservicebg})`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <motion.h1
+            className="text-5xl md:text-6xl font-bold text-yellow-400 drop-shadow-lg"
+            variants={childVariants}
+          >
+            Our Services
+          </motion.h1>
+          <motion.p
+            className="mt-4 text-xl max-w-2xl leading-relaxed"
+            variants={childVariants}
+          >
+            Discover our comprehensive range of professional services tailored
+            to meet your needs.
+          </motion.p>
+        </div>
+      </motion.section>
+
+      {/* Services Section with Animation */}
+      <motion.section
+        className="flex flex-col py-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-          <h2 className="text-3xl font-semibold text-yellow-400 mb-12">
+          <motion.h2
+            className="text-3xl font-semibold text-yellow-400 mb-12"
+            variants={childVariants}
+          >
             What We Offer
-          </h2>
+          </motion.h2>
           <div className="flex flex-col md:flex-row flex-wrap justify-center gap-8 w-full">
             {servicesData.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex-1 min-w-[300px] bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 flex flex-col"
+                className="flex-1 min-w-[300px] bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col"
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                whileHover="hover"
               >
-                <div className="flex items-center mb-4">
+                <motion.div
+                  className="flex items-center mb-4"
+                  variants={childVariants}
+                >
                   {service.icon}
                   <h3 className="text-2xl font-semibold text-yellow-400 ml-4">
                     {service.title}
                   </h3>
-                </div>
-                <p className="text-lg leading-relaxed mb-6">
+                </motion.div>
+                <motion.p
+                  className="text-lg leading-relaxed mb-6"
+                  variants={childVariants}
+                >
                   {service.description}
-                </p>
-                <ul className="list-disc list-inside text-lg mb-6 flex-1">
+                </motion.p>
+                <motion.ul
+                  className="list-disc list-inside text-lg mb-6 flex-1"
+                  variants={childVariants}
+                >
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="text-gray-300">
                       {feature}
                     </li>
                   ))}
-                </ul>
-                <button className="bg-yellow-400 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300 self-start">
+                </motion.ul>
+                <motion.button
+                  className="bg-yellow-400 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition duration-300 self-start"
+                  variants={buttonVariants}
+                  whileHover="hover"
+                  whileTap="tap"
+                >
                   Learn More
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

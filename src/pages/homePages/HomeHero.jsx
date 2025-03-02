@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HomeHero = () => {
   return (
-    <div className="flex align-center justify-center">
+    <div className="flex align-center justify-center pt-6">
       <main
         className="flex flex-col 
             items-center justify-center 
