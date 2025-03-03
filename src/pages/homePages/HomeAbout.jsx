@@ -48,7 +48,13 @@ const HomeAbout = () => {
   };
 
   return (
-    <section className="bg-[#252525] text-white py-20 w-screen">
+    <section className="bg-[#252525] text-white py-20 h-screen" style={{
+      backgroundImage: `radial-gradient(circle at 80% 80%, rgba(250, 204, 21, 0.15) 0%, transparent 50%)`,
+    }}>
+      {/* Heading */}
+      <h2 className="text-2xl font-bold text-center text-yellow-400 mb-12">
+          About CyberWatt
+        </h2>
       <div className="max-w-7xl  mt-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
         {/* Left: Image with Animation */}
         <motion.div
@@ -60,7 +66,7 @@ const HomeAbout = () => {
           // whileHover="hover"
         >
           <div className="relative ">
-            <div className="w-90 h-96 bg-yellow-400 rounded-xl overflow-hidden shadow-2xl">
+            <div className="w-30 h-30 bg-yellow-400 rounded-xl overflow-hidden shadow-2xl">
               <motion.img
                 src={AboutBG}
                 alt="About Us"

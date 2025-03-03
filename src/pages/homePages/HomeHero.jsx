@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 
 const HomeHero = () => {
   return (
-    <div className="flex align-center justify-center pt-6 mt-10 mb-5">
+    <div
+      className="flex align-center justify-center pt-6 h-svh"
+      style={{
+        backgroundImage: `radial-gradient(circle at 20% 20%, rgba(250, 204, 21, 0.15) 0%, transparent 50%)`,
+      }}
+    >
       <main
         className="flex flex-col 
             items-center justify-center 
@@ -12,6 +17,13 @@ const HomeHero = () => {
             lg:items-center lg:justify-between
             lg:space-x-12"
       >
+        {/* Floating Particles */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute w-2 h-2 bg-yellow-400 rounded-full top-1/4 left-1/3 animate-float"></div>
+          <div className="absolute w-3 h-3 bg-yellow-400 rounded-full top-2/3 right-1/4 animate-float delay-1000"></div>
+          <div className="absolute w-1 h-1 bg-yellow-400 rounded-full bottom-1/5 left-1/2 animate-float delay-500"></div>
+        </div>
+
         <div
           className="lg:max-w-xl
                 lg:flex-1 lg:text-left text-center "
@@ -39,7 +51,8 @@ const HomeHero = () => {
             Where Each Plate Weaves a Story of Culinary Mastery and Passionate
             Craftsmanship
           </p>
-          <Link to="/contact"
+          <Link
+            to="/contact"
             className="bg-yellow-600 
                     text-white text-lg font-semibold 
                     py-3 px-6 rounded-full shadow-md
@@ -50,8 +63,8 @@ const HomeHero = () => {
         </div>
 
         <div
-          className="relative w-full max-w-md 
-                lg:w-1/2 lg:max-w-sm lg:h-96 mt-8 lg:mt-0"
+          className="relative w-full max-w-sm
+                lg:w-1/2 lg:max-w-md lg:h-96 mt-8 lg:mt-0 hidden sm:block"
         >
           <div
             className="absolute inset-0 
@@ -60,7 +73,7 @@ const HomeHero = () => {
           <img
             className="relative w-full h-full 
                         object-contain rounded-full border-2
-                        border-white sm:w-full md:w-full "
+                        border-white"
             src={Person}
             alt="Placeholder"
           />
