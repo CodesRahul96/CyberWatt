@@ -168,32 +168,9 @@ const Services = () => {
   return (
     <div className="bg-[#252525] text-white min-h-screen flex flex-col">
       {/* Hero Section with Gradient and Animation */}
-      {/* <motion.section
-        className="flex flex-col items-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={heroVariants}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
-            variants={childVariants}
-          >
-            Our Services
-          </motion.h1>
-          <motion.p
-            className="text-xl max-w-2xl mx-auto leading-relaxed text-white drop-shadow-md"
-            variants={childVariants}
-          >
-            Discover our comprehensive range of professional services tailored
-            to meet your needs.
-          </motion.p>
-        </div>
-      </motion.section> */}
 
       <motion.section
-        className="relative flex items-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]"
+        className="relative flex items-center align-center justify-center py-24 bg-gradient-to-r from-yellow-500 via-yellow-400 to-[#252525]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -206,7 +183,7 @@ const Services = () => {
           }}
         ></div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="relative z-10 flex flex-col items-center justify-center pt-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-yellow-400 drop-shadow-lg"
             variants={childVariants}

@@ -75,7 +75,7 @@ const About = () => {
           }}
         ></div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="relative z-10 flex flex-col items-center justify-center pt-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.h1
             className="text-5xl md:text-6xl font-bold text-yellow-400 drop-shadow-lg"
             variants={childVariants}

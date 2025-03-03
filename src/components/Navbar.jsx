@@ -31,8 +31,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-screen bg-[#252525] text-white fixed top-0 left-0 z-50 shadow-lg">
-      <div className="flex justify-between items-center p-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
+    <nav className="w-screen bg-[#323232] text-white fixed top-0 left-0 z-50 shadow-lg">
+      <div className="flex justify-between items-center p-5 md:px-8 lg:px-12 max-w-7xl mx-auto">
         {/* Logo */}
         <motion.div
           className="flex items-center"

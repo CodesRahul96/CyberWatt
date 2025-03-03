@@ -49,7 +49,7 @@ const HomeAbout = () => {
 
   return (
     <section className="bg-[#252525] text-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+      <div className="max-w-7xl  mt-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
         {/* Left: Image with Animation */}
         <motion.div
           className="flex-1"

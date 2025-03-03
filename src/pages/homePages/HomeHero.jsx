@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const HomeHero = () => {
   return (
-    <div className="flex align-center justify-center pt-6">
+    <div className="flex align-center justify-center pt-6 mt-10 mb-5">
       <main
         className="flex flex-col 
             items-center justify-center 
@@ -50,8 +50,8 @@ const HomeHero = () => {
         </div>
 
         <div
-          className="relative w-full max-w-sm
-                lg:w-1/2 lg:max-w-md lg:h-96 mt-8 lg:mt-0"
+          className="relative w-full max-w-md 
+                lg:w-1/2 lg:max-w-sm lg:h-96 mt-8 lg:mt-0"
         >
           <div
             className="absolute inset-0 
@@ -60,7 +60,7 @@ const HomeHero = () => {
           <img
             className="relative w-full h-full 
                         object-contain rounded-full border-2
-                        border-white"
+                        border-white sm:w-full md:w-full "
             src={Person}
             alt="Placeholder"
           />
