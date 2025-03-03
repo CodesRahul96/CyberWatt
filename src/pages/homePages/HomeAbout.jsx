@@ -48,8 +48,8 @@ const HomeAbout = () => {
   };
 
   return (
-    <section className="bg-[#252525] text-white py-20 h-screen" style={{
-      backgroundImage: `radial-gradient(circle at 80% 80%, rgba(250, 204, 21, 0.15) 0%, transparent 50%)`,
+    <section className="bg-[#252525] text-white py-10 h-screen" style={{
+      backgroundImage: `radial-gradient(circle at 90% 80%, rgba(250, 204, 21, 0.15) 0%, transparent 50%)`,
     }}>
       {/* Heading */}
       <h2 className="text-2xl font-bold text-center text-yellow-400 mb-12">
