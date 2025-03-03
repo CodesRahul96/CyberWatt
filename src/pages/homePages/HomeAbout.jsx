@@ -48,7 +48,7 @@ const HomeAbout = () => {
   };
 
   return (
-    <section className="bg-[#252525] text-white py-20">
+    <section className="bg-[#252525] text-white py-20 w-screen">
       <div className="max-w-7xl  mt-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
         {/* Left: Image with Animation */}
         <motion.div
@@ -57,10 +57,10 @@ const HomeAbout = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={imageVariants}
-          whileHover="hover"
+          // whileHover="hover"
         >
-          <div className="relative">
-            <div className="w-full h-96 bg-yellow-400 rounded-xl overflow-hidden shadow-2xl">
+          <div className="relative ">
+            <div className="w-90 h-96 bg-yellow-400 rounded-xl overflow-hidden shadow-2xl">
               <motion.img
                 src={AboutBG}
                 alt="About Us"
