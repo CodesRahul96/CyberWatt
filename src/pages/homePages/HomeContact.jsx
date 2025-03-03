@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 const HomeContact = () => {
-  // State for form inputs
+  // State for form inputs, added phone
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
@@ -14,12 +15,12 @@ const HomeContact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission (just logs for now)
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Reset form (optional)
-    setFormData({ name: "", email: "", message: "" });
+    // Reset form with phone included
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
@@ -64,6 +65,23 @@ const HomeContact = () => {
                   required
                 />
               </div>
+              {/* Added Phone Number Field */}
+              <div>
+                <label htmlFor="phone" className="block text-lg mb-2">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400"
+                  placeholder="Your Phone Number"
+                  pattern="[0-9]{10}"
+                  required
+                />
+              </div>
               <div>
                 <label htmlFor="message" className="block text-lg mb-2">
                   Message
@@ -87,7 +105,6 @@ const HomeContact = () => {
               </button>
             </form>
           </div>
-
           {/* Contact Info Section */}
           <div className="md:w-1/3">
             <h3 className="text-2xl font-semibold text-yellow-400 mb-6">
@@ -111,7 +128,8 @@ const HomeContact = () => {
               </li>
               <li>
                 <span className="font-semibold">Address:</span>FLAT NO.103
-                GEETANJALI APT GATE NO.61, SINHAGAD ROAD,<br /> KIRKATWADI, HAVELI, PUNE, 411024
+                GEETANJALI APT GATE NO.61, SINHAGAD ROAD,
+                <br /> KIRKATWADI, HAVELI, PUNE, 411024
               </li>
             </ul>
           </div>

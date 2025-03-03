@@ -84,7 +84,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isActive && (
           <motion.ul
-            className="flex flex-col items-center justify-center py-6 bg-[#252525] text-white md:hidden absolute top-16 left-0 w-full shadow-lg"
+            className="flex flex-col items-center justify-center py-6 bg-[#252525] text-white md:hidden absolute top-20 left-0 w-full shadow-lg"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
@@ -100,7 +100,7 @@ const Navbar = () => {
               >
                 <Link
                   to={`${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
-                  className="block px-4 py-8 text-lg font-medium hover:text-yellow-400 transition-colors duration-200"
+                  className="block px-4 py-10 text-lg font-medium hover:text-yellow-400 transition-colors duration-200"
                   onClick={() => setIsActive(false)}
                 >
                   {item}

@@ -12,7 +12,6 @@ function App() {
    <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <div className="pt-16">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -22,7 +21,6 @@ function App() {
           </Routes>
         </div>
         <Footer className="mt-auto" />
-      </div>
     </Router>
   );
 }
