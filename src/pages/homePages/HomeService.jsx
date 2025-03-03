@@ -25,7 +25,7 @@ const HomeService = () => {
     <section className="bg-[#252525] text-white py-16 h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
+        <h2 className="text-2xl font-bold text-center text-yellow-400 mb-12">
           Our Services
         </h2>
 
